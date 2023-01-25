@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
+      <meta name="description" content="" />
+      <title>Warhammer Tournament</title>
+
+      <link
+        rel="canonical"
+        href="https://getbootstrap.com/docs/4.5/examples/album/"
+      />
+
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+        crossorigin="anonymous"
+      />
+    </head>
+    <body>
+      <%- include('common/header'); -%>
+      <div class="container">
+        <h1 class="text-center">Create A New army</h1>
+        <div class="row justify-content-md-center">
+          <div class="col-">
+            <form method="POST" action="/create-army"> 
+              <div class="form-group">
+                <label for="name">Army Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Enter Name of army"
+                  name="name"
+                />
+                <% if (errors['name']) { %>
+                <p style="color: red"> <%= errors['name'].message %> </p>
+                <% } %>
+              </div>
+
+              <div class="form-group">
+                <label for="name">Name of Owner</label>
+                <input type="text" 
+                    name="owner" 
+                    class="form-control" 
+                    id="name" 
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="name">Name of Faction</label>
+                <input type="text" 
+                    name="faction" 
+                    class="form-control" 
+                    id="name" 
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="name">Amount of Points</label>
+                <input type="number" 
+                    name="points" 
+                    class="form-control" 
+                    id="name" 
+                />
+                <% if (errors['points']) { %>
+                    <p style="color: red"> <%= errors['points'].message %> </p>
+                    <% } %>
+              </div>
+
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <%- include('common/footer'); -%>
+    </body>
+  </html>
+</html>
